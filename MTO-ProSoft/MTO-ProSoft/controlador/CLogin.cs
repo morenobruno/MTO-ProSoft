@@ -10,7 +10,7 @@ namespace MTO_ProSoft.controlador
             string respuesta = "";
             Usuario datosUsuario = null;
 
-            if (string.IsNullOrEmpty(user) || string.IsNullOrEmpty(password))
+            if (string.IsNullOrEmpty(user) || string.IsNullOrEmpty(password) || user.Equals(" Usuario") || password.Equals(" Contraseña"))
             {
                 respuesta = "Debe llenar todos los campos :c";
             }
@@ -31,5 +31,6 @@ namespace MTO_ProSoft.controlador
             }
             return respuesta;
         }
+
     }
 }

@@ -33,6 +33,7 @@ namespace MTO_ProSoft
             this.customPanel1 = new MTO_ProSoft.CustomControls.CustomPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.gcbox_RecordarUsuario = new Guna.UI.WinForms.GunaCheckBox();
             this.gabtn_Login = new Guna.UI.WinForms.GunaAdvenceButton();
             this.ctxtbox_Contrasenia = new MTO_ProSoft.CustomControls.CustomTextBox();
             this.ctxtbox_Usuario = new MTO_ProSoft.CustomControls.CustomTextBox();
@@ -69,6 +70,7 @@ namespace MTO_ProSoft
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.panel1.Controls.Add(this.gcbox_RecordarUsuario);
             this.panel1.Controls.Add(this.gabtn_Login);
             this.panel1.Controls.Add(this.ctxtbox_Contrasenia);
             this.panel1.Controls.Add(this.ctxtbox_Usuario);
@@ -80,6 +82,21 @@ namespace MTO_ProSoft
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(395, 720);
             this.panel1.TabIndex = 0;
+            // 
+            // gcbox_RecordarUsuario
+            // 
+            this.gcbox_RecordarUsuario.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(237)))));
+            this.gcbox_RecordarUsuario.CheckedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.gcbox_RecordarUsuario.CheckedOnColor = System.Drawing.Color.Black;
+            this.gcbox_RecordarUsuario.FillColor = System.Drawing.Color.White;
+            this.gcbox_RecordarUsuario.Font = new System.Drawing.Font("MS Reference Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gcbox_RecordarUsuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(156)))), ((int)(((byte)(146)))));
+            this.gcbox_RecordarUsuario.Location = new System.Drawing.Point(66, 404);
+            this.gcbox_RecordarUsuario.Name = "gcbox_RecordarUsuario";
+            this.gcbox_RecordarUsuario.Size = new System.Drawing.Size(124, 20);
+            this.gcbox_RecordarUsuario.TabIndex = 6;
+            this.gcbox_RecordarUsuario.Text = " recordar usuario";
+            this.gcbox_RecordarUsuario.CheckedChanged += new System.EventHandler(this.gcbox_RecordarUsuario_CheckedChanged);
             // 
             // gabtn_Login
             // 
@@ -126,18 +143,18 @@ namespace MTO_ProSoft
             this.ctxtbox_Contrasenia.FocusedBaseColor = System.Drawing.Color.White;
             this.ctxtbox_Contrasenia.FocusedBorderColor = System.Drawing.Color.Black;
             this.ctxtbox_Contrasenia.FocusedForeColor = System.Drawing.Color.Black;
-            this.ctxtbox_Contrasenia.Font = new System.Drawing.Font("Nunito", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ctxtbox_Contrasenia.Font = new System.Drawing.Font("MS Reference Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ctxtbox_Contrasenia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(156)))), ((int)(((byte)(146)))));
             this.ctxtbox_Contrasenia.Location = new System.Drawing.Point(62, 348);
             this.ctxtbox_Contrasenia.Name = "ctxtbox_Contrasenia";
             this.ctxtbox_Contrasenia.PasswordChar = '\0';
             this.ctxtbox_Contrasenia.PasswordMode = true;
-            this.ctxtbox_Contrasenia.PlaceHolder = "Contraseña";
+            this.ctxtbox_Contrasenia.PlaceHolder = " Contraseña";
             this.ctxtbox_Contrasenia.Radius = 5;
             this.ctxtbox_Contrasenia.SelectedText = "";
             this.ctxtbox_Contrasenia.Size = new System.Drawing.Size(270, 50);
             this.ctxtbox_Contrasenia.TabIndex = 4;
-            this.ctxtbox_Contrasenia.Text = "Contraseña";
+            this.ctxtbox_Contrasenia.Text = " Contraseña";
             this.ctxtbox_Contrasenia.TextOffsetX = 10;
             // 
             // ctxtbox_Usuario
@@ -149,19 +166,20 @@ namespace MTO_ProSoft
             this.ctxtbox_Usuario.FocusedBaseColor = System.Drawing.Color.White;
             this.ctxtbox_Usuario.FocusedBorderColor = System.Drawing.Color.Black;
             this.ctxtbox_Usuario.FocusedForeColor = System.Drawing.Color.Black;
-            this.ctxtbox_Usuario.Font = new System.Drawing.Font("Nunito", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ctxtbox_Usuario.Font = new System.Drawing.Font("MS Reference Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ctxtbox_Usuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(156)))), ((int)(((byte)(146)))));
             this.ctxtbox_Usuario.Location = new System.Drawing.Point(62, 276);
             this.ctxtbox_Usuario.Name = "ctxtbox_Usuario";
             this.ctxtbox_Usuario.PasswordChar = '\0';
             this.ctxtbox_Usuario.PasswordMode = false;
-            this.ctxtbox_Usuario.PlaceHolder = "Usuario";
+            this.ctxtbox_Usuario.PlaceHolder = " Usuario";
             this.ctxtbox_Usuario.Radius = 5;
             this.ctxtbox_Usuario.SelectedText = "";
             this.ctxtbox_Usuario.Size = new System.Drawing.Size(270, 50);
             this.ctxtbox_Usuario.TabIndex = 3;
-            this.ctxtbox_Usuario.Text = "Usuario";
+            this.ctxtbox_Usuario.Text = " Usuario";
             this.ctxtbox_Usuario.TextOffsetX = 10;
+            this.ctxtbox_Usuario.TextChanged += new System.EventHandler(this.ctxtbox_Usuario_TextChanged);
             // 
             // pictureBox2
             // 
@@ -206,6 +224,7 @@ namespace MTO_ProSoft
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
+            this.Load += new System.EventHandler(this.Login_Load);
             this.customPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
@@ -226,5 +245,6 @@ namespace MTO_ProSoft
         private CustomControls.CustomTextBox ctxtbox_Contrasenia;
         private CustomControls.CustomTextBox ctxtbox_Usuario;
         private Guna.UI.WinForms.GunaAdvenceButton gabtn_Login;
+        private Guna.UI.WinForms.GunaCheckBox gcbox_RecordarUsuario;
     }
 }
